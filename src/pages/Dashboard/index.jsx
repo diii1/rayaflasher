@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../assets/css/template.css';
-import Navbar from '../../components/Navbar';
-import Dashboardcontent from '../../components/DashboardContent';
-import Sidenav from '../../components/SideNav';
+import Navbar from '../../components/Navbar/Navbar'
+import Dashboardcontent from '../../components/Dashboard/DashboardContent';
+import Sidenav from '../../components/SideNav/SideNav';
 
 const Dashboard = () => {
     return (

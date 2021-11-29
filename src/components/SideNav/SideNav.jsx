@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/css/template.css';
+import '../../assets/css/template.css';
 import Custom from './sideNav.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';

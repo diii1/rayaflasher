@@ -1,7 +1,7 @@
 import React from 'react';
-import '../assets/css/template.css';
+import '../../assets/css/template.css';
 import Custom from './dashContent.module.css';
-import Footer from './Footer';
+import Footer from '../Footer/Footer';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
 
@@ -35,7 +35,7 @@ const Dashboardcontent = () => {
                         </Col>
                     </Row>
                     <Row>
-                        
+                        <Col className="bg-light">Test</Col>
                     </Row>
                 </Container>
             </main>
