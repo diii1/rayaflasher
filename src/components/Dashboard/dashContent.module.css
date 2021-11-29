@@ -8,3 +8,7 @@
     width: 25% !important;
     margin-right: 8%;
 }
+
+.boxChart{
+    border: 1px solid black;
+}

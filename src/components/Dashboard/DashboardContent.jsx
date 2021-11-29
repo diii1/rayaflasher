@@ -3,7 +3,7 @@ import '../../assets/css/template.css';
 import Custom from './dashContent.module.css';
 import Footer from '../Footer/Footer';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-
+import Chartdata from '../LineCharts/ChartData';
 
 const Dashboardcontent = () => {
     return (
@@ -34,8 +34,12 @@ const Dashboardcontent = () => {
                             </Card>  
                         </Col>
                     </Row>
-                    <Row>
-                        <Col className="bg-light">Test</Col>
+                    <Row className="mt-4 mb-5">
+                        <Col>
+                            <Container className={`bg-light px-0 ${Custom.boxChart}`}>
+                                <Chartdata/>
+                            </Container>
+                        </Col>
                     </Row>
                 </Container>
             </main>
