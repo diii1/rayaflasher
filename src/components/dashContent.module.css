@@ -1,0 +1,10 @@
+.cards{
+    height: 135px;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.boxes{
+    width: 25% !important;
+    margin-right: 8%;
+}
