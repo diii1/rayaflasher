@@ -8,15 +8,17 @@ import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 const search = <FontAwesomeIcon icon={solid('search')} />;
 const notification = <FontAwesomeIcon icon={solid('bell')} />;
 const users = <FontAwesomeIcon icon={solid('user')} /> ;
+const bars = <FontAwesomeIcon icon={solid('bars')} /> ;
 
 const Navbar = () => {
     return (
         <nav className={`sb-topnav navbar navbar-expand navbar-dark ${Custom.topNav}`}>
             <a 
-                className="navbar-brand ps-3" 
+                className={`navbar-brand ps-3 ${Custom.brand}`} 
                 href="logo">
                     <img className={Custom.logoBrand} src={Logo} alt="logo" />
             </a>
+            <button className={`btn btn-link btn-sm ${Custom.barsIcon}`} id="sidebarToggle" href="#!">{ bars }</button>
             <form className="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div className="input-group">
                     <input 
