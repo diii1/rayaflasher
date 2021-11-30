@@ -12,3 +12,12 @@
 .boxChart{
     border: 1px solid black;
 }
+
+.buttonAdd{
+    border-color: #10E2FF !important;
+}
+
+.buttonAdd:hover{
+    color: #525252 !important;
+    background-color: #10E2FF !important;
+}

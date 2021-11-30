@@ -7,6 +7,27 @@ import LoadingSvg from './LoadingSvg';
 const Spareparttable = () => {
     const {data, loading, error} = useSubscription(SubSparepartData);
 
+    if (loading){
+        return <LoadingSvg/>
+    }
+
+    if (error){
+        console.log(error);
+        return null;
+    }
+
+    console.log(data);
+
+    const mappedData = data.sparePart.map((row) => {
+        const test = <h1>Heytayo</h1>;
+        return {
+            id: row.id,
+            name: row.name, 
+            stock: row.stock,
+            actions: test
+        };
+    });
+
     const column = [
         {
             name: 'ID',
@@ -25,9 +46,10 @@ const Spareparttable = () => {
         },
         {
             name: 'Actions',
-            selector: 'action',
-            sortable: false
+            selector: 'actions',
+            sortable: false 
         }
+        
     ];
     
     const allSparepartData ={
@@ -37,22 +59,14 @@ const Spareparttable = () => {
         selectAllRowsText : 'getData'
     }
     
-    if (loading){
-        return <LoadingSvg/>
-    }
-
-    if (error){
-        console.log(error);
-        return null;
-    }
 
     return (
         <div className="table-responsive">
             {!loading && (
                 <DataTable 
                     columns={column} 
-                    data={data.sparePart}
-                    title="Data Nama" 
+                    data={mappedData}
+                    title="Data Nama"
                     pagination 
                     paginationComponentOptions={allSparepartData}
                     fixedHeader
