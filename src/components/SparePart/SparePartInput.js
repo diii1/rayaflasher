@@ -7,6 +7,7 @@ import {
 import useGetSparepart from '../../hooks/useGetSparepart';
 import useInsertSparepart from '../../hooks/useInsertSparepart';
 import { useState, useEffect } from 'react';
+import LoadingSvg from '../DataTables/LoadingSvg';
 
 const Sparepartinput = (props) => {
     const { sparepart, loading, error, subscribeSparepart } = useGetSparepart();
@@ -18,11 +19,15 @@ const Sparepartinput = (props) => {
 
     // const [list, setList] = useState([]);
     const [name, setName] = useState("");
-    const [stock, setStock] = useState("");
+    const [stock, setStock] = useState(0);
 
     // if (loading){
     //     return "wait...";
     // }
+
+    if (loadingInsert) {
+        return <LoadingSvg/>
+    }
 
     if (error){
         console.log(error);
