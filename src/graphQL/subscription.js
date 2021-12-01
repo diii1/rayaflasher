@@ -9,3 +9,21 @@ export const SubSparepartData = gql `
         }
     }
 `;
+
+export const SubServiceData = gql `
+    subscription MySubscription {
+        service {
+            id
+            sparePart {
+                name
+            }
+            nama
+            identitas
+            noHp
+            merk
+            type
+            kerusakan
+            harga
+        }
+    }
+`;

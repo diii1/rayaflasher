@@ -1,19 +1,18 @@
 import React from 'react';
-import '../../assets/css/template.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Sidenav from '../../components/SideNav/SideNav';
-import Sparepartcontent from '../../components/SparePart/SparePartContent';
+import Servicecontent from '../../components/Service/ServiceContent';
 
-const Sparepart = () => {
+const Service = () => {
     return (
         <div className="sb-nav-fixed">
             <Navbar/>
             <div id="layoutSidenav">
                 <Sidenav/>
-                <Sparepartcontent/>
+                <Servicecontent/>
             </div>
         </div>
     );
 }
 
-export default Sparepart;
+export default Service;
