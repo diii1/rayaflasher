@@ -10,20 +10,15 @@ import { useState, useEffect } from 'react';
 import LoadingSvg from '../DataTables/LoadingSvg';
 
 const Sparepartinput = (props) => {
-    const { sparepart, loading, error, subscribeSparepart } = useGetSparepart();
+    const {  error, subscribeSparepart } = useGetSparepart();
     const { insertSparepart, loadingInsert } = useInsertSparepart();
 
     useEffect(() => {
         subscribeSparepart();
     }, []);
 
-    // const [list, setList] = useState([]);
     const [name, setName] = useState("");
     const [stock, setStock] = useState(0);
-
-    // if (loading){
-    //     return "wait...";
-    // }
 
     if (loadingInsert) {
         return <LoadingSvg/>

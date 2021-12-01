@@ -31,7 +31,7 @@ const Navbar = () => {
                     </button>
                 </div>
             </form>
-            <a className={`me-5 ${Custom.icons}`}me-5 href="as">{ notification }</a>
+            <a className={`me-5 ${Custom.icons} ${Custom.iconBell}`}me-5 href="as">{ notification }</a>
             <span className={`me-2 ${Custom.icons}`}>Yafi</span>
             <ul className="navbar-nav ms-auto ms-md-0 me-4 me-lg-3">
                 <li className="nav-item dropdown">

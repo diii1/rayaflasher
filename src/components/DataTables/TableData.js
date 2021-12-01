@@ -1,13 +1,11 @@
 import React from 'react';
 import DataTable from 'react-data-table-component';
-import LoadingSvg from './LoadingSvg';
+import Custom from '../Dashboard/dashContent.module.css';
 import useGetService from '../../hooks/useGetService';
-import Serviceactions from '../Service/ServiceActions';
-import useDeleteService from '../../hooks/useDeleteService';
+import LoadingSvg from './LoadingSvg';
 
-const Servicetable = () => {
+const Tabledata = () => {
     const { service, loading, error } = useGetService();
-    const { deleteService, loadingDelete } = useDeleteService();
 
     if (loading){
         return <LoadingSvg/>
@@ -16,14 +14,6 @@ const Servicetable = () => {
     if (error){
         console.log(error);
         return null;
-    }
-    
-    const handleDelete = (id) => {
-        deleteService({
-            variables: {
-                id: id
-            }
-        });
     }
 
     const mappedData = service.map((row) => {
@@ -36,8 +26,6 @@ const Servicetable = () => {
             type: row.type,
             kerusakan: row.kerusakan,
             sparePart: row.sparePart.name,
-            harga: row.harga,
-            actions: <Serviceactions delete={() => handleDelete(row.id)} />
         };
     });
 
@@ -75,33 +63,18 @@ const Servicetable = () => {
         {
             name: 'Type',
             selector: 'type',
-            maxWidth: "50px",
             sortable: true
         },
         {
             name: 'Kerusakan',
             selector: 'kerusakan',
-            maxWidth: "150px",
             sortable: true
         },
         {
             name: 'Sparepart',
             selector: 'sparePart',
-            maxWidth: "100px",
             sortable: true
-        },
-        {
-            name: 'Harga',
-            selector: 'harga',
-            maxWidth: "100px",
-            sortable: true
-        },
-        {
-            name: 'Actions',
-            selector: 'actions',
-            sortable: false 
         }
-        
     ];
     
     const allServiceData ={
@@ -110,22 +83,19 @@ const Servicetable = () => {
         selectAllRowsItem : true,
         selectAllRowsText : 'getData'
     }
-
     return (
-        <div className="table-responsive">
-            {!loading && (
-                <DataTable 
-                    columns={column} 
-                    data={mappedData}
-                    title="Data Service"
-                    pagination 
-                    paginationComponentOptions={allServiceData}
-                    fixedHeader
-                    fixedHeaderScrollHeight="532px"
-                />
-            )}
+        <div className={`table-responsive ${Custom.insideBoxed}`}>
+            <DataTable 
+                columns={column} 
+                data={mappedData} 
+                title="Data Service Ongoing" 
+                pagination 
+                paginationComponentOptions={allServiceData}
+                fixedHeader
+                fixedHeaderScrollHeight="532px"
+            />
         </div>
     );
 }
 
-export default Servicetable;
+export default Tabledata;

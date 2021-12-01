@@ -8,6 +8,7 @@ import {
     Button 
 } from 'react-bootstrap';
 import Servicetable from '../DataTables/ServiceTable';
+import Serviceinput from './ServiceInput';
 
 const Servicecontent = () => {
     const [show, setShow] = useState(false);
@@ -27,6 +28,7 @@ const Servicecontent = () => {
                                     Add Data
                                 </Button>
                                 <Servicetable/>
+                                <Serviceinput show={show} hide={handleClose}/>
                             </Container>
                         </Col>
                     </Row>

@@ -19,3 +19,10 @@
     color: #525252 !important;
     border: 1px solid #525252 !important;
 }
+
+@media (min-width: 375px) and (max-width: 480px) {
+    .iconBell{
+        margin-left: 25px;
+        margin-right: 10px !important;
+    }
+}

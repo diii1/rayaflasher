@@ -5,13 +5,32 @@
 }
 
 .boxes{
+    float: left;
     width: 25% !important;
-    margin-right: 8%;
+    margin-right: 106px;
+    margin-left: 47px !important;
 }
 
-/* .boxChart{
+.title{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.boxesLast{
+    float: left;
+    width: 25% !important;
+}
+
+.boxedContainer{
     border: 1px solid black;
-} */
+    border-radius: 10px;
+}
+
+.insideBoxed{
+    margin-top: 50px;
+    margin-left: 60px;
+    width: 90%;
+}
 
 .buttonAdd{
     border-color: #10E2FF !important;
@@ -20,4 +39,19 @@
 .buttonAdd:hover{
     color: #525252 !important;
     background-color: #10E2FF !important;
+}
+
+@media (min-width: 375px) and (max-width: 480px)  {
+    .insideBoxed{
+        width: 65%;
+    }
+
+    .boxes{
+        width: 70% !important;
+    }
+
+    .boxesLast{
+        width: 70% !important;
+        margin-left: 47px !important;
+    }
 }

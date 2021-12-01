@@ -5,7 +5,7 @@ import { SubServiceData } from "../graphQL/subscription";
 export default function useGetService(){
     const {data, loading, error, subscribeToMore} = useQuery(ServiceAllData);
     
-    const subsribeService = () => {
+    const subscribeService = () => {
         subscribeToMore({
             document: SubServiceData,
             updateQuery: (prev, { subscriptionData: { data }}) => {
@@ -18,6 +18,6 @@ export default function useGetService(){
         service: data ? data.service : [],
         loading,
         error, 
-        subsribeService,
+        subscribeService,
     };
 }

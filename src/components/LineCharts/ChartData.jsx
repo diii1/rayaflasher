@@ -1,18 +1,19 @@
 import React from 'react';
 import { Line, defaults } from 'react-chartjs-2';
+import Custom from '../Dashboard/dashContent.module.css';
 
 defaults.global.tooltips.enabled = false;
 defaults.global.legend.position = 'bottom';
 
 const Chartdata = () => {
     return (
-        <div>
+        <div className={Custom.insideBoxed}>
             <Line
                 data={{
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
                 datasets: [
                     {
-                    label: '# of votes',
+                    label: '# of Services',
                     data: [12, 19, 3, 5, 2, 3],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -40,9 +41,10 @@ const Chartdata = () => {
                     // },
                 ],
                 }}
-                height={400}
-                width={600}
+                height={550}
+                width={964}
                 options={{
+                responsive: true,
                 maintainAspectRatio: false,
                 scales: {
                     yAxes: [

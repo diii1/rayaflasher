@@ -25,3 +25,19 @@ export const UpdateSparepart = gql `
         }
     }
 `;
+
+export const InsertService = gql `
+    mutation MyMutation($object: service_insert_input = {}) {
+        insert_service_one(object: $object) {
+            id 
+        }
+    }  
+`;
+
+export const DeleteService = gql `
+    mutation MyMutation2($id: Int!) {
+        delete_service_by_pk(id: $id) {
+            id
+        }
+    }
+`;
