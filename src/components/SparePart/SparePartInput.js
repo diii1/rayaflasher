@@ -63,7 +63,7 @@ const Sparepartinput = (props) => {
     return (
         <div>
             <Modal show={props.show} onHide={props.hide}>
-                <Modal.Header>
+                <Modal.Header closeButton>
                     <Modal.Title>Add Spare Part</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -77,9 +77,6 @@ const Sparepartinput = (props) => {
                             <Form.Control type="number" name="stock" onChange={onChangeStock} placeholder="Stock Sparepart..." required />
                         </Form.Group>
                         <div className="d-flex justify-content-end">
-                            <Button variant="danger" onClick={props.close}>
-                                Close
-                            </Button>
                             <Button variant="primary" type="submit" className="ms-3">
                                 Submit Data
                             </Button>

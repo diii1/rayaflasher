@@ -2,12 +2,10 @@ import React from 'react';
 import DataTable from 'react-data-table-component';
 import LoadingSvg from './LoadingSvg';
 import useGetService from '../../hooks/useGetService';
-import useGetSparepart from '../../hooks/useGetSparepart';
 import Serviceactions from '../Service/ServiceActions';
 
 const Servicetable = () => {
-    const { service, loading, error, subscribeService } = useGetService();
-    const { sparepart } = useGetSparepart();
+    const { service, loading, error } = useGetService();
 
     if (loading){
         return <LoadingSvg/>

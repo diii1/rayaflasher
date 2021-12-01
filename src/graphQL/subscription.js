@@ -27,3 +27,14 @@ export const SubServiceData = gql `
         }
     }
 `;
+
+export const SubUserData = gql `
+    subscription MySubscription {
+        user {
+            id
+            name
+            email
+            password
+        }
+    }
+`;

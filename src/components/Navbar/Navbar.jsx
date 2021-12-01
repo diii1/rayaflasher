@@ -15,7 +15,7 @@ const Navbar = () => {
         <nav className={`sb-topnav navbar navbar-expand navbar-dark ${Custom.topNav}`}>
             <a 
                 className={`navbar-brand ps-3 ${Custom.brand}`} 
-                href="logo">
+                href="/">
                     <img className={Custom.logoBrand} src={Logo} alt="logo" />
             </a>
             <button className={`btn btn-link btn-sm ${Custom.barsIcon}`} id="sidebarToggle" href="#!">{ bars }</button>
@@ -47,7 +47,10 @@ const Navbar = () => {
                         <li><a className="dropdown-item" href="#!">Settings</a></li>
                         <li><a className="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr className="dropdown-divider" /></li>
-                        <li><a className="dropdown-item" href="#!">Logout</a></li>
+                        <li onClick={() => {
+                            localStorage.setItem("loggedIn", "false");
+                            window.location.href = "/login";
+                        }}><a className="dropdown-item" href="/login">Logout</a></li>
                     </ul>
                 </li>
             </ul>

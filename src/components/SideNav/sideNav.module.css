@@ -1,9 +1,18 @@
 .nav{
-    color: #525252 !important;
+    color: #000 !important;
     font-weight: bold;
     font-size: 21px;
 }
 
+.nav:hover{
+    color: white !important;
+}
+
+.active{
+    color:white !important;
+}
+
 .sideIcon{
+    color: inherit !important;
     font-size: 1.2rem !important;
 }

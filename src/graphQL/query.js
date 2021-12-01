@@ -26,4 +26,15 @@ export const ServiceAllData = gql `
             harga
         }
     }
-`
+`;
+
+export const User = gql `
+    query MyQuery($email: String!) {
+        user(where: {email: {_eq: $email}}) {
+            id
+            name
+            email
+            password
+        }
+    }
+`;

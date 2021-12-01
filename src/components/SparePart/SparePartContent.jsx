@@ -29,7 +29,7 @@ const Sparepartcontent = () => {
                                 <Button variant="primary" onClick={handleShow} className={`d-flex ms-auto mb-1 ${Custom.buttonAdd}`}>
                                     Add Data
                                 </Button>
-                                <Sparepartinput show={show} hide={handleShow} close={handleClose} />
+                                <Sparepartinput show={show} hide={handleClose} />
                                 <Spareparttable/>
                             </Container>
                         </Col> 
