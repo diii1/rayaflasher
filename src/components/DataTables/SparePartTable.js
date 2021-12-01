@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import React, { useState } from 'react';
 import DataTable from 'react-data-table-component';
 // import { SubSparepartData } from '../../graphQL/subscription';
 // import { useSubscription } from '@apollo/client';
@@ -11,21 +11,40 @@ import Sparepartactions from '../SparePart/SparePartActions';
 import LoadingSvg from './LoadingSvg';
 import useDeleteSparepart from '../../hooks/useDeleteSparepart';
 import useGetSparepart from '../../hooks/useGetSparepart';
-import Sparepartinput from '../SparePart/SparePartInput';
+import useUpdateSparepart from '../../hooks/useUpdateSparepart';
 
 const Spareparttable = () => {
-    // const {data, loading, error} = useSubscription(SubSparepartData);
-
-    const { sparepart, loading, error, subscribeSparepart } = useGetSparepart();
+    const { sparepart, loading, error } = useGetSparepart();
     const { deleteSparepart, loadingDelete } = useDeleteSparepart();
+    const { updateSparepart, loadingUpate } = useUpdateSparepart();
 
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const handleEdit = () => {
+    const [id, setId] = useState(0);
+    const [name, setName] = useState("");
+    const [stock, setStock] = useState(0);
+    
+    const handleEdit = (id) => {
         handleShow();
+        const item = sparepart.find((v) => v.id === id);
+        setId(item?.id);
+        setName(item?.name);
+        setStock(item?.stock);
+    }
+    
+    const onChangeName = (e) => {
+        if(e.target){
+            setName(e.target.value);
+        }
+    }
+
+    const onChangeStock = (e) => {
+        if(e.target){
+            setStock(e.target.value);
+        }
     }
 
     const handleDelete = (id) => {
@@ -34,6 +53,17 @@ const Spareparttable = () => {
                 id: id
             }
         });
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        updateSparepart({
+            variables:{
+                id: id,
+                name: name,
+                stock: stock,
+            }
+        })
     }
 
     if (loading){
@@ -45,14 +75,12 @@ const Spareparttable = () => {
         return null;
     }
 
-    // console.log(data);
-
     const mappedData = sparepart.map((row) => {
         return {
             id: row.id,
             name: row.name, 
             stock: row.stock,
-            actions: <Sparepartactions edit={() => handleEdit()} delete={() => handleDelete(row.id)} />
+            actions: <Sparepartactions edit={() => handleEdit(row.id)} delete={() => handleDelete(row.id)} />
         };
     });
 
@@ -105,26 +133,23 @@ const Spareparttable = () => {
                 <Modal.Header closeButton>
                     <Modal.Title>Edit Spare Part</Modal.Title>
                 </Modal.Header>
-                {/* <Modal.Body>
-                    <Form onSubmit={()=>{}}>
+                <Modal.Body>
+                    <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3" controlId="formBasicText">
                             <Form.Label>Nama Spare Part</Form.Label>
-                            <Form.Control type="text" name="name" onChange={onChangeName} placeholder="Enter Name Sparepart..." required />
+                            <Form.Control type="text" name="name" onChange={onChangeName} value={name} placeholder="Enter Name Sparepart..." required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicNumber">
                             <Form.Label>Stock</Form.Label>
-                            <Form.Control type="number" name="stock" onChange={onChangeStock} placeholder="Stock Sparepart..." required />
+                            <Form.Control type="number" name="stock" onChange={onChangeStock} value={stock} placeholder="Stock Sparepart..." required />
                         </Form.Group>
                         <div className="d-flex justify-content-end">
-                            <Button variant="danger" onClick={props.close}>
-                                Close
-                            </Button>
                             <Button variant="primary" type="submit" className="ms-3">
                                 Submit Data
                             </Button>
                         </div>
                     </Form>
-                </Modal.Body> */}
+                </Modal.Body>
             </Modal>
         </div>
     );

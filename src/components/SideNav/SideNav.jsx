@@ -30,7 +30,6 @@ const navMenuList = [
 
 const Sidenav = () => {
     const location = useLocation();
-    console.log(location);
     return (
         <div id="layoutSidenav_nav">
             <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">

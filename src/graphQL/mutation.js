@@ -15,3 +15,13 @@ export const DeleteSparePart = gql `
         }
     }  
 `;
+
+export const UpdateSparepart = gql `
+    mutation MyMutation($id: Int!, $name: String!, $stock: Int!) {
+        update_sparePart_by_pk(
+        pk_columns: {id: $id}, 
+        _set: {name: $name, stock: $stock}) {
+            id
+        }
+    }
+`;
