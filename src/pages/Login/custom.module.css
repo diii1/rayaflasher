@@ -1,0 +1,47 @@
+.box {
+    height: 200px;
+}
+
+.bgSvg {
+    position: absolute;
+}
+
+.layer {
+    background-color: #10E2FF;
+    opacity: 44%;
+    width: 100%;
+    position: absolute;
+}
+
+.imgLogo{
+    width:100%;
+}
+
+.logo{
+    width: 200px;
+}
+
+.content{
+    position: relative;
+}
+
+.title{
+    color: #525252;   
+}
+
+.inputLogin{
+    color: white !important;
+    background-color: #224957 !important;
+    border-radius: 10px !important;
+}
+
+.btnLogin {
+    border-radius: 10px !important;
+    background-color: #20DF7F !important;
+    border: none !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.inputLogin::placeholder {
+    color: white !important;
+}
