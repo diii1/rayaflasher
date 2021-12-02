@@ -41,3 +41,30 @@ export const DeleteService = gql `
         }
     }
 `;
+
+export const UpdateService = gql `  
+    mutation MyMutation3(
+        $id: Int!, 
+        $idSparepart: Int!, 
+        $nama: String!, 
+        $identitas: String!, 
+        $noHp: String!, 
+        $merk: String!, 
+        $type: String!, 
+        $kerusakan: String!, 
+        $harga: bigint!
+        ) {
+            update_service_by_pk(pk_columns: {id: $id}, _set: {
+                idSparepart: $idSparepart, 
+                nama: $nama, 
+                identitas: $identitas, 
+                noHp: $noHp, 
+                merk: $merk, 
+                type: $type, 
+                kerusakan: $kerusakan, 
+                harga: $harga}
+            ) {
+                    id
+        }
+    }
+`;

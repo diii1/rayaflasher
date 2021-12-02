@@ -60,6 +60,11 @@ const Chartdata = () => {
                     fontSize: 25,
                     },
                 },
+                title: {
+                    display: true,
+                    text: 'Service Today',
+                    fontSize: 35,
+                },
                 }}
             />
         </div>

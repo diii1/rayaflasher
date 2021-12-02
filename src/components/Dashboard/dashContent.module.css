@@ -7,8 +7,7 @@
 .boxes{
     float: left;
     width: 25% !important;
-    margin-right: 106px;
-    margin-left: 47px !important;
+    margin-left: 55px !important;
 }
 
 .title{
@@ -19,6 +18,13 @@
 .boxesLast{
     float: left;
     width: 25% !important;
+    margin-left: 122px !important;
+}
+
+.boxesMid{
+    float: left;
+    width: 25% !important;
+    margin-left: 122px !important;
 }
 
 .boxedContainer{
@@ -49,9 +55,13 @@
     .boxes{
         width: 70% !important;
     }
+    .boxesMid{
+        width: 70% !important;
+        margin-left: 55px !important;
+    }
 
     .boxesLast{
         width: 70% !important;
-        margin-left: 47px !important;
+        margin-left: 55px !important;
     }
 }

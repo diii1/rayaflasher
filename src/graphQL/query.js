@@ -15,6 +15,7 @@ export const ServiceAllData = gql `
         service {
             id
             sparePart {
+                id
                 name
             }
             nama

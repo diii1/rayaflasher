@@ -30,7 +30,7 @@ const Dashboardcontent = () => {
                                 </Card>    
 
                             </Col>
-                            <Col md="4" className={Custom.boxes}>
+                            <Col md="4" className={Custom.boxesMid}>
                                 <Card border="danger">
                                     <Card.Body className={`text-center d-flex justify-content-center align-items-center ${Custom.cards}`}>
                                         <span className="text-danger">60</span>
