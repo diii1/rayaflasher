@@ -13,8 +13,8 @@ import useUpdateService from '../../hooks/useUpdateService';
 
 const Servicetable = () => {
     const { service, loading, error } = useGetService();
-    const { deleteService, loadingDelete } = useDeleteService();
-    const { updateService, loadingUpdate } = useUpdateService();
+    const { deleteService } = useDeleteService();
+    const { updateService } = useUpdateService();
 
     const [show, setShow] = useState(false);
 

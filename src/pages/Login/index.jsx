@@ -14,7 +14,7 @@ const Login = () => {
 
     const handleLogin = async(e) => {
         e.preventDefault();
-        console.log("Heytayo");
+        // console.log("Heytayo");
 
         const Users = await fetchUser({variables:{email:email}});
         // console.log("ysers", Users);
