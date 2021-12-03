@@ -15,8 +15,8 @@ import useUpdateSparepart from '../../hooks/useUpdateSparepart';
 
 const Spareparttable = () => {
     const { sparepart, loading, error } = useGetSparepart();
-    const { deleteSparepart, loadingDelete } = useDeleteSparepart();
-    const { updateSparepart, loadingUpate } = useUpdateSparepart();
+    const { deleteSparepart } = useDeleteSparepart();
+    const { updateSparepart } = useUpdateSparepart();
 
     const [show, setShow] = useState(false);
 

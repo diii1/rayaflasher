@@ -15,7 +15,7 @@ const Sparepartinput = (props) => {
 
     useEffect(() => {
         subscribeSparepart();
-    }, []);
+    }, [subscribeSparepart]);
 
     const [name, setName] = useState("");
     const [stock, setStock] = useState(0);

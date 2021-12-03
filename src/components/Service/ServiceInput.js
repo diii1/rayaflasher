@@ -14,7 +14,7 @@ const Serviceinput = (props) => {
 
     useEffect(() => {
         subscribeService();
-    }, []);
+    }, [subscribeService]);
 
     const [idSparepart, setIdSparepart] = useState(0);
     const [nama, setNama] = useState("");
